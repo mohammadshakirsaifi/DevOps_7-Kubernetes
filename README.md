@@ -110,10 +110,9 @@ Open browser:
 ```
 http://localhost:3000
 ```
-
 ![Backend](screenshots/8-Backend.png)
 
-![Backend Output](screenshots/9-Backend-Output.png)
+![Backend Output](screenshots/9-Backend-Browser.png)
 
 ---
 
