@@ -52,61 +52,95 @@ DevOps_7-Kubernetes/
 
 ## ▶️ Deployment Steps
 
-### 1️⃣ Start Minikube
+###  Start Minikube
 ```bash
 minikube start
 ```
-###### 📸 Screenshot: screenshots/1-Minikube-Start.png
+### 1. Minikube Start
 
-2️⃣ Configure Docker to Use Minikube
+![Minikube Start](screenshots/1-Minikube-Start.png)
+
+---
+
+### 2. Configure Docker to Use Minikube
+
+```bash
 eval $(minikube docker-env)
+```
 
 Verify:
 
+```bash
 docker info | grep Name
+```
 
-📸 Screenshot: screenshots/2-Docker-env.png
+![Docker Environment](screenshots/2-Docker-env.png)
 
-3️⃣ Build Docker Images
+---
+
+### 3. Build Docker Images
+
+```bash
 docker build -t express-backend ./express-backend
 docker build -t flask-frontend ./flask-frontend
+```
 
 Verify:
 
+```bash
 docker images
+```
 
-📸 Screenshot: screenshots/3-Docker-Images.png
+![Docker Images](screenshots/3-Docker-Images.png)
 
-4️⃣ Deploy to Kubernetes
+---
+
+### 4. Deploy to Kubernetes
+
+```bash
 kubectl apply -f k8s/
+```
 
-📸 Screenshot: screenshots/4-kubectl-apply.png
+![Kubectl Apply](screenshots/4-kubectl-apply.png)
 
-5️⃣ Verify Pods and Services
+---
+
+### 5. Verify Pods and Services
+
+```bash
 kubectl get pods
 kubectl get svc
+```
 
-📸 Screenshot: screenshots/5-pods-services.png
+![Pods and Services](screenshots/5-pods-services.png)
 
-6️⃣ Verify Backend Output
+---
+
+### 6. Verify Backend Output
+
+```bash
 kubectl port-forward svc/express-service 3000:3000
+```
 
 Open browser:
 
+```
 http://localhost:3000
+```
+![Backend](screenshots/8-Backend.png)
 
-📸 Screenshot: screenshots/6-Backend-Output.png
+![Backend Output](screenshots/9-Backend-Output.png)
 
-7️⃣ Access Flask Frontend
+---
+
+### 7. Access Flask Frontend
+
+```bash
 minikube service flask-service
+```
+![Frontend](screenshots/6-Frontend.png)
 
-📸 Screenshot: screenshots/7-Frontend-Browser.png
+![Frontend Browser](screenshots/7-Frontend-Browser.png)
 
-✅ Expected Output
 
-Backend returns:
-
-{ "message": "Hello from Express Backend!" }
-
-Frontend displays the backend response in the browser.
 
