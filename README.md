@@ -6,25 +6,8 @@ The Flask frontend communicates with the Express backend using Kubernetes Servic
 ---
 
 ## 📁 Project Structure
-
-DevOps_7-Kubernetes/
-├── README.md  
-├── express-backend  
-│   ├── Dockerfile  
-│   ├── package.json  
-│   └── server.js  
-├── flask-frontend  
-│   ├── Dockerfile  
-│   ├── app.py  
-│   ├── requirements.txt  
-│   └── templates  
-│       └── index.html  
-├── k8s  
-│   ├── express-deployment.yaml  
-│   ├── express-service.yaml  
-│   ├── flask-deployment.yaml  
-│   └── flask-service.yaml  
-└── screenshots  
+ 
+<img width="392" height="663" alt="image" src="https://github.com/user-attachments/assets/aa8da963-2207-4fb6-a74e-802ba0667779" />
 
 ---
 
@@ -127,6 +110,7 @@ Open browser:
 ```
 http://localhost:3000
 ```
+
 ![Backend](screenshots/8-Backend.png)
 
 ![Backend Output](screenshots/9-Backend-Output.png)
@@ -138,6 +122,7 @@ http://localhost:3000
 ```bash
 minikube service flask-service
 ```
+
 ![Frontend](screenshots/6-Frontend.png)
 
 ![Frontend Browser](screenshots/7-Frontend-Browser.png)
